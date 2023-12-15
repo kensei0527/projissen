@@ -205,11 +205,11 @@ public class ShGameMaster2 extends Canvas implements MouseMotionListener,MouseLi
     }
   }
   if(flg>0){
-    buf_gc.drawImage(effectpic, ftr.x-25, ftr.y-55, 40, 40, this);  //爆発のエフェクトの画像貼り付け
+    buf_gc.drawImage(effectpic, ftr.x-25, ftr.y-55, 40, 40, this);  //ファイターの爆発のエフェクトの画像貼り付け
     flg--;
   }
   if(flg2>0){
-    buf_gc.drawImage(effectpic, queenpic.xp, queenpic.yp-55, 40, 40, this);
+    buf_gc.drawImage(effectpic, queenpic.xp, queenpic.yp-55, 40, 40, this); //姫の爆発のエフェクト
     flg2--;
   }
       
@@ -236,7 +236,7 @@ public class ShGameMaster2 extends Canvas implements MouseMotionListener,MouseLi
       }
         ftr.move(buf_gc, imgW, imgH);
         queen.move(buf_gc, imgW, imgH);
-        buf_gc.drawString("HP "+ queen.hp, queen.x-15, queen.y-30);
+        buf_gc.drawString("HP "+ queen.hp, queen.x-15, queen.y-30); //HP表示
         queenpic.cDraw(buf_gc);
         queenpic.cUpdate();
 
@@ -246,7 +246,7 @@ public class ShGameMaster2 extends Canvas implements MouseMotionListener,MouseLi
         for(j=0;j<enmyBltnum;j++){
           enmyBlt[i][j].move(buf_gc, imgW, imgH);
           if(i<enmyAnum && enmyBlt[i][j].hp>0){
-            buf_gc.drawImage(bulletpic, enmyBlt[i][j].x-5, enmyBlt[i][j].y-5,8,8, this);
+            buf_gc.drawImage(bulletpic, enmyBlt[i][j].x-5, enmyBlt[i][j].y-5,8,8, this);  //弾の画像の描画
           }
           else if(i>=enmyAnum && i<enmy.size() && enmyBlt[i][j].hp>0){
             buf_gc.drawImage(bulletpic, enmyBlt[i][j].x-13, enmyBlt[i][j].y-13, 25, 25, this);
@@ -288,7 +288,7 @@ public class ShGameMaster2 extends Canvas implements MouseMotionListener,MouseLi
     //使わない
   }
 
-  public void mouseMoved(MouseEvent e){
+  public void mouseMoved(MouseEvent e){ //マウスの動きと連動してファイターが動く
     
     ftr.x = e.getX();
     ftr.y = e.getY();
