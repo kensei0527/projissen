@@ -1,3 +1,6 @@
+/*敵Bのクラス */
+
+
 import java.awt.*;
 class EnemyB extends MovingObject {
     int[] xPoints = new int[5];
@@ -14,7 +17,7 @@ class EnemyB extends MovingObject {
         delaytime = 20;
     //x  = (int) (Math.random()*apWidth);  // 画面の内部でランダム
     //y  = (int) (Math.random()*apHeight); // 画面の内部でランダム
-        delta = (360.0 / (double)n ) * ( Math.PI / 180.0);
+        delta = (360.0 / (double)n ) * ( Math.PI / 180.0);  //EnemyBは多角形
         for(int i= 0; i<n; i++) {
 			xPoints[i] = (int)(Math.cos(-Math.PI/2.0 + delta * i)*r) + x;
 			yPoints[i] = (int)(Math.sin(-Math.PI/2.0 + delta * i)*r) + y;
