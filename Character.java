@@ -1,3 +1,5 @@
+/*逃げる姫のアニメーションのクラス */
+
 import java.awt.*;
 
 public class Character extends Frame {
